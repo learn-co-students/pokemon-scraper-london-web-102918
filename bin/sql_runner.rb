@@ -16,4 +16,9 @@ class SQLRunner
   def execute_sql(sql)
      sql.scan(/[^;]*;/m).each { |line| @db.execute(line) } unless sql.empty?
   end
+
+  # def execute_hp_update
+  #   sql = File.read('db/update_hp_migration.sql')
+  #   execute_sql(sql)
+  # end
 end
